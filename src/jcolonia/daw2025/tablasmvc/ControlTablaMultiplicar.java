@@ -28,7 +28,7 @@ public class ControlTablaMultiplicar {
 
 	/**
 	* Gestión del menú principal. Desde este menú
-	* se ejecutan las opciones disponibles a elección del usuario.
+	* se ej  ecutan las opciones disponibles a elección del usuario.
 	* A la salida del menú se finaliza el programa.
 	*/
 	public void buclePrincipal(){
