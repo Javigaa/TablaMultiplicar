@@ -1,3 +1,4 @@
+ 
 package jcolonia.daw2025.tablasmvc;
 
 import java.util.ArrayList;
@@ -28,8 +29,12 @@ public class TablaMultiplicar {
 	 * Generaremos la tabla creando todas las lineas de 1 - 10 y lo guarda en la lista.
 	 */
 	public void GenerarTabla () {
-		
+		for (int i = 1; i <= 10; i++) {
+			String linea = String.format("%d x %d = %d", numero, i, (numero * i));
+			listaTextos.add(linea);
+		}	
 	}
+	
 	/**
 	 * Devuelve la tabla guardada para exportarla
 	 * @return La lista de String de la tabla
@@ -38,6 +43,7 @@ public class TablaMultiplicar {
 		return listaTextos;
 		
 	}
+	
 	/**
 	 * Devueelve la tabla guardada para poder mostrarla por pantalla.
 	 * @return La lista de String de la tabla.
@@ -51,8 +57,9 @@ public class TablaMultiplicar {
 	 * Devuelve por consola la representacion de toda la tabla.
 	 * @return La lista de String unida por saltos de linea.
 	 */
+	@Override
 	public String toString() {
-		return null;
+		return String.join("\n", listaTextos);
 	}
 	
 }
