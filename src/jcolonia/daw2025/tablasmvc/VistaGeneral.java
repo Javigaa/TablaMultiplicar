@@ -46,14 +46,19 @@ public class VistaGeneral {
 	}
 	
 	/**
-	 * Solicita un número al usuario.
+	 * Solicita un número al usuario y valida la entrada.
 	 * @param texto de petición.
 	 * @return El número leído.
+	 * @throws ExcepcionES si la entrada no es un número válido.
 	 */
-	public int pedirNumero(String texto) {
-		mostrarTexto(texto);
-		return Integer.parseInt(scEntrada.nextLine());
-		
+	public int pedirNumero(String texto) throws ExcepcionES {
+	    mostrarTexto(texto);
+	    try {
+	        String linea = scEntrada.nextLine();
+	        return Integer.parseInt(linea);
+	    } catch (NumberFormatException e) {
+	        throw new ExcepcionES("Error: Debes introducir un número entero válido.", e);
+	    }
 	}
 	
 	/**
@@ -61,7 +66,8 @@ public class VistaGeneral {
 	 * @param texto Mensaje de pausa.
 	 */
 	public void pausa(String texto) {
-		
+		mostrarTexto(texto);
+		scEntrada.nextLine();
 	}
 	
 	/**
@@ -70,13 +76,14 @@ public class VistaGeneral {
 	 * @return Resultado de la confirmación.
 	 */
 	public boolean pedirconfirmacion(String texto) {
-		return false;
+		mostrarTexto(texto);
+		return scEntrada.nextLine().equalsIgnoreCase("Y");
 		
 	}
 	
 	/**
 	 * Imprime los elementos de una lista.
-	 * @return 
+	 * @return Lista  
 	 */
 	public List<String> mostrarlista(){
 		return null;
@@ -87,7 +94,7 @@ public class VistaGeneral {
 	 * @return El objeto Scanner.
 	 */
 	public Scanner getentrada() {
-		return 0;
+		return scEntrada;
 		
 	}
 }

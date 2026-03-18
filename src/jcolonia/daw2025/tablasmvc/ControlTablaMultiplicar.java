@@ -76,7 +76,7 @@ public class ControlTablaMultiplicar {
 	private void cambiarTabla(){
 		int n;
 		
-		VistaGeneral.pedirNúmero("Introduzca el número para la tabla");
+		VistaGeneral.pedirNumero("Introduzca el número para la tabla");
 		
 		tabla=new TablaMultiplicar(n);
 		tabla.generarTabla();
@@ -85,7 +85,7 @@ public class ControlTablaMultiplicar {
 	/**
 	* Envía a un archivo
 	* los productos correspondientes a la tabla activa.
-	*/
+	*/  
 	private void exportarTabla(){}
 	
 	/**

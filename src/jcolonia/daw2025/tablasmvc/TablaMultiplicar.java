@@ -20,8 +20,12 @@ public class TablaMultiplicar {
 	/**
 	 * Crea una nueva tabla y a esta se le asigna el numero.
 	 * @param numero el numero que le asignaremos a la tabla
+	 * @throws ExcepcionES 
 	 */
-	public TablaMultiplicar(int numero) {
+	public TablaMultiplicar(int numero) throws ExcepcionES {
+		if (numero < 0) {
+	        throw new ExcepcionES("No se pueden crear tablas de números negativos.");
+	    }
 		this.numero = numero;
 	}
 	
@@ -49,7 +53,7 @@ public class TablaMultiplicar {
 	 * @return La lista de String de la tabla.
 	 */
 	public List<String> toListaPantalla(){
-		return listaTextos;
+		return new ArrayList<>(listaTextos);
 		
 	}
 	
